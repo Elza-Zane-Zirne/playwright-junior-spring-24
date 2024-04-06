@@ -9,7 +9,7 @@ test.describe("Successful auth tests", async () => {
     const homePage = new HomePage(page);
     const productsPage = new ProductsPage(page);
 
-    await homePage.navigateToHomePage();
+    await homePage.navigateToPage("/");
     await homePage.inputLoginData("standard_user", "secret_sauce");
     await homePage.clickLoginButton();
     await productsPage.assertPageUrl("/inventory.html");
@@ -20,7 +20,7 @@ test.describe("Successful auth tests", async () => {
 test.describe("Unsuccessful auth tests", async () => {
   test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page);
-    await homePage.navigateToHomePage();
+    await homePage.navigateToPage("/");
   });
   //Sign in with incorect user data
   test("Sign in with incorect user data", async ({ page }) => {

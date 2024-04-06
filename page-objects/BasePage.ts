@@ -7,6 +7,10 @@ export default class ProductsPage {
     this.page = page;
   }
 
+  async navigateToPage(url: string) {
+    await this.page.goto(url);
+  }
+
   async assertPageUrl(url: string) {
     await expect(this.page).toHaveURL(url);
   }

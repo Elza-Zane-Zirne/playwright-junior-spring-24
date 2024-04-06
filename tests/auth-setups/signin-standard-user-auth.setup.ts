@@ -8,7 +8,7 @@ setup("Sign in as standard user", async ({ page }) => {
   const homePage = new HomePage(page);
   const productsPage = new ProductsPage(page);
 
-  await homePage.navigateToHomePage();
+  await homePage.navigateToPage("/");
   await homePage.inputLoginData("standard_user", "secret_sauce");
   await homePage.clickLoginButton();
   await productsPage.assertPageUrl("/inventory.html");

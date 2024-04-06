@@ -17,10 +17,6 @@ export default class HomePage extends BasePage {
     this.errorToastMessage = this.page.getByTestId("error");
   }
 
-  async navigateToHomePage() {
-    await this.page.goto("/");
-  }
-
   async inputLoginData(username: string, password: string) {
     await this.userNameInput.fill(username);
     await this.passwordInput.fill(password);

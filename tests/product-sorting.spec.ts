@@ -11,14 +11,9 @@ import ProductsPage from "../page-objects/ProductsPage";
 test.use({ storageState: ".auth/standard-user-auth.json" });
 
 test.beforeEach(async ({ page }) => {
-  const homePage = new HomePage(page);
   const productsPage = new ProductsPage(page);
 
-  await homePage.navigateToHomePage();
-  await homePage.inputLoginData("standard_user", "secret_sauce");
-  await homePage.clickLoginButton();
-  await productsPage.assertPageUrl("/inventory.html");
-  await productsPage.assertPageTitleText("Products");
+  await productsPage.navigateToPage("/inventory.html");
 });
 
 test("Change sorting option to Name (Z to A)", async ({ page }) => {
