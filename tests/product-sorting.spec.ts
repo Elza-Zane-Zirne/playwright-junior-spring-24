@@ -8,7 +8,7 @@ import ProductsPage from "../page-objects/ProductsPage";
 // -Change sorting option
 // -Make sure elemets are sorted accordingly
 
-test.use({ storageState: ".auth/standard-user-auth.json" });
+test.use({ storageState: { cookies: [], origins: [] } });
 
 test.beforeEach(async ({ page }) => {
   const productsPage = new ProductsPage(page);

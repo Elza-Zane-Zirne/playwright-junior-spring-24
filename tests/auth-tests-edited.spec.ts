@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import HomePage from "../page-objects/HomePage";
 import ProductsPage from "../page-objects/ProductsPage";
 
-//test.use({ storageState: { cookies: [], origins: [] } });
+test.use({ storageState: { cookies: [], origins: [] } });
 
 test.describe("Successful auth tests", async () => {
   test("Sign in as standard user", async ({ page }) => {
